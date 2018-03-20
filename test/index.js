@@ -7,6 +7,12 @@ import {
 } from '../index'
 
 test('Only number and Date is allowed', t => {
+  /* Number of arguments. */
+  t.notThrows(_ => gethhmmss())
+  t.notThrows(_ => gethhmmss(1))
+  t.throws(_ => gethhmmss(1, 2))
+  t.throws(_ => gethhmmss(1, 2, 3))
+
   /* Valid inputs. */
   t.notThrows(_ => gethhmmss(new Date()))
   t.notThrows(_ => gethhmmss(60))
