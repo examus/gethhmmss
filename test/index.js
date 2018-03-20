@@ -6,7 +6,6 @@ import {
   isDate
 } from '../index'
 
-
 test('Only number and Date is allowed', t => {
   /* Valid inputs. */
   t.notThrows(_ => gethhmmss(new Date()))

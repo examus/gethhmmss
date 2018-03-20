@@ -18,12 +18,20 @@
     "format"
   ],
   "author": "Examus team",
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/examus/gethhmmss/issues"
   },
   "homepage": "https://github.com/examus/gethhmmss#readme",
   "devDependencies": {
-    "ava": "^0.25.0"
+    "ava": "^0.25.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0"
   }
 }
