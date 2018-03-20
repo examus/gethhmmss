@@ -2,8 +2,11 @@
   "name": "gethhmmss",
   "version": "0.1.0",
   "description": "Convert seconds or Data object to \"hh:mm:ss\" format.",
-  "main": "index.js",
+  "main": "dist/gethhmmss.cjs.js",
+  "module": "dist/gethhmmss.esm.js",
+  "browser": "dist/gethhmmss.umd.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "ava"
   },
   "repository": {
