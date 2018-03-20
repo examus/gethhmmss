@@ -3,12 +3,6 @@ Convert seconds or Data object to "hh:mm:ss" format.
 
 ## Usage
 
-Get current date in hh:mm:ss format
-```js
-  import gethhmmss from 'gethhmmss'
-  gethhmmss()
-```
-
 Convert given Date object to hh:mm:ss
 ```js
   import gethhmmss from 'gethhmmss'
@@ -19,4 +13,11 @@ Convert given Date object to hh:mm:ss
   let hhmmss = gethhmmss(date)
   
   console.log(hhmmss) /* 04:20:02 */
+```
+
+Get current date in hh:mm:ss format
+```js
+  import gethhmmss from 'gethhmmss'
+  
+  let hhmmss = gethhmmss()
 ```
