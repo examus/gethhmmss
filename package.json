@@ -1,0 +1,29 @@
+{
+  "name": "gethhmmss",
+  "version": "0.1.0",
+  "description": "Convert seconds or Data object to \"hh:mm:ss\" format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/examus/gethhmmss.git"
+  },
+  "keywords": [
+    "hhmmss",
+    "date",
+    "time",
+    "seconds",
+    "format"
+  ],
+  "author": "Examus team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/examus/gethhmmss/issues"
+  },
+  "homepage": "https://github.com/examus/gethhmmss#readme",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
