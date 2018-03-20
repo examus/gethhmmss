@@ -29,6 +29,8 @@ test('Get hh:mm:ss from seconds', t => {
   /* Some tricky cases. */
   t.is(gethhmmss(0), '00:00:00')
   t.is(gethhmmss(-1), '-00:00:01')
+  t.is(gethhmmss(-77), '-00:01:17')
+  t.is(gethhmmss(-7777), '-02:09:37')
 })
 
 test('Get hh:mm:ss from Date', t => {
