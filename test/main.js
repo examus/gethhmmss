@@ -4,7 +4,7 @@ import {
   default as gethhmmss,
   isInteger,
   isDate
-} from '../index'
+} from '../src/main'
 
 test('Only number and Date is allowed', t => {
   /* Number of arguments. */
