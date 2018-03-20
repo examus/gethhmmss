@@ -40,7 +40,7 @@ test('Get hh:mm:ss from seconds', t => {
 })
 
 test('Get hh:mm:ss from Date', t => {
-  let date = new Date(2007, 8, 3, 4, 20, 1)
+  let date = new Date(2007, 8, 3, 4, 20, 2)
   let hhmmss = gethhmmss(date)
 
   t.is(hhmmss, '04:20:02')

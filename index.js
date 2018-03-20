@@ -61,6 +61,11 @@ let fromDate = date => {
   return hhmmss
 }
 
+let fromNow = () => {
+  let now = new Date()
+  return fromDate(now)
+}
+
 export default function gethhmmss (...args) {
 
   /**
@@ -79,8 +84,10 @@ export default function gethhmmss (...args) {
 
 
   /**
-   * From seconds.
+   * Do the job.
    */
 
-  if (isInteger(x)) return fromSeconds(x)
+  if (args.length === 0) return fromNow()
+  else if (isInteger(x)) return fromSeconds(x)
+  else if (isDate(x)) return fromDate(x)
 }
