@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 let isInteger = x => Number.isInteger(x);
 
 let isDate_ = x =>
@@ -13,7 +11,12 @@ let isDate = x => {
   catch (_) { return false }
 };
 
+/**
+ * Hours, minutes, seconds -> hh:mm:ss
+ * Pad them with a zero, and join with ':'.
+ */
 let fromArray = ([hours, minutes, seconds]) => {
+
   /* Expect only positive numbers. */
 
   let allPositive =
@@ -26,7 +29,7 @@ let fromArray = ([hours, minutes, seconds]) => {
 
   console.assert(
     allPositive && allIntegers,
-    'gethhmmss: fromArray: expected positive integers but got',
+    'gethhmmss: fromArray: expected non-negative integers but got',
     `[${[hours, minutes, seconds].join(', ')}]`);
 
   /* Do the job. */
@@ -36,6 +39,11 @@ let fromArray = ([hours, minutes, seconds]) => {
   .map(x => x.padStart(2, '0'))
   .join(':')
 };
+
+
+/**
+ * The very logic.
+ */
 
 let fromSeconds = givenSeconds => {
   let positiveSeconds =
@@ -70,32 +78,34 @@ let fromNow = () => {
   return fromDate(now)
 };
 
+
+/**
+ * Validate the args and apply the right logic.
+ */
 function gethhmmss (...args) {
 
   /**
-   * Validate the args.
+   * Prepare error messages.
    */
 
-  if (args.length > 1) {
-    throw TypeError(`gethhmmss: zero or one argument expected but got [${args.join(', ')}]`)
-  }
+  let toomanyargs = args =>
+    `gethhmmss: zero or one argument expected but got [${args.join(', ')}]`;
 
-  let [x] = args;
-
-  if (args.length === 1 && !isInteger(x) && !isDate(x)) {
-    throw TypeError(`gethhmmss: expected integer or Date but got ${x}`)
-  }
+  let badarg = arg =>
+    `gethhmmss: expected integer or Date but got ${arg}`;
 
 
   /**
-   * Do the job.
+   * Route to the right logic.
    */
 
+  let [x] = args;
+
   if (args.length === 0) return fromNow()
+  else if (args.length > 1) throw TypeError(toomanyargs(args))
   else if (isInteger(x)) return fromSeconds(x)
   else if (isDate(x)) return fromDate(x)
+  else throw TypeError(badarg(x))
 }
 
-exports.isInteger = isInteger;
-exports.isDate = isDate;
-exports.default = gethhmmss;
+module.exports = gethhmmss;

@@ -1,3 +1,5 @@
+import {isInteger, isDate} from './helpers'
+
 /**
  * Hours, minutes, seconds -> hh:mm:ss
  * Pad them with a zero, and join with ':'.

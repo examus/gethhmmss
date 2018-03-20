@@ -1,10 +1,6 @@
 import test from 'ava'
 
-import {
-  default as gethhmmss,
-  isInteger,
-  isDate
-} from '../src/main'
+import gethhmmss from '../src/main'
 
 test('Only number and Date is allowed', t => {
   /* Number of arguments. */
@@ -50,36 +46,4 @@ test('Get hh:mm:ss of now', t => {
   let now = new Date()
 
   t.is(gethhmmss(), gethhmmss(now))
-})
-
-/* isInteger and isDate */
-
-test('isInteger', t => {
-  t.true(isInteger(0))
-  t.true(isInteger(1))
-  t.false(isInteger(1.1))
-  t.false(isInteger(NaN))
-  t.false(isInteger(null))
-  t.false(isInteger(''))
-  t.false(isInteger('0'))
-})
-
-let FakeDate = () => {
-  let noop = _ => void null
-
-  let [getHours, getMinutes, getSeconds] =
-    [noop, noop, noop]
-
-  return {
-    getHours,
-    getMinutes,
-    getSeconds}
-}
-
-test('isDate', t => {
-  t.true(isDate(new Date()))
-  t.true(isDate(FakeDate()))
-  t.false(isDate(5))
-  t.false(isDate('5'))
-  t.false(isDate(null))
 })
