@@ -11,6 +11,12 @@ The number of seconds is an interval, not a date. It can be greater than 23:59:5
   console.log(gethhmmss(71))    /* 00:01:11 */
   console.log(gethhmmss(86400)) /* 24:00:00 */
   console.log(gethhmmss(90080)) /* 25:01:20 */
+
+  /* Negative number of seconds is also valid. */
+
+  console.log(gethhmmss(-71))    /* -00:01:11 */
+  console.log(gethhmmss(-86400)) /* -24:00:00 */
+  console.log(gethhmmss(-90080)) /* -25:01:20 */
 ```
 
 Convert given Date object to "hh:mm:ss"
@@ -31,6 +37,20 @@ Get current date in "hh:mm:ss" format
 
   let hhmmss = gethhmmss()
 ```
+
+## Contribute
+
+What is in TODO list:
+- flow typings
+- ts typings
+- options for function:
+  - always show sign (`+00:00:00`)
+  - custom separator (`00:00:00`)
+
+
+## Versioning
+
+Every version is major. You can always see the [changelog](https://github.com/examus/gethhmmss/blob/master/CHANGELOG.md) and be aware of the recent changes.
 
 ## See Also
 
