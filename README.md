@@ -1,6 +1,11 @@
 # gethhmmss
 Convert seconds or Data object to "hh:mm:ss" format.
 
+## Install
+```sh
+  npm i --save gethhmmss
+```
+
 ## Usage
 
 Convert number of seconds to "hh:mm:ss".
