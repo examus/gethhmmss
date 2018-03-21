@@ -7,7 +7,8 @@
   "browser": "dist/gethhmmss.umd.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "ava"
+    "test": "ava",
+    "deploy": "scripts/deploy"
   },
   "pre-commit": [
     "test",

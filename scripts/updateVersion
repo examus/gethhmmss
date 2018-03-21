@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+let {readFileSync, writeFileSync} = require('fs')
+let packageJSON = './package.json'
+
+let pkg =
+  JSON.parse(
+    readFileSync(packageJSON, {encoding: 'utf8'}))
+
+let [major] = pkg.version.split('.')
+let version = [++major, 0, 0].join('.')
+
+let newPkg = Object.assign({}, pkg, {version})
+
+writeFileSync(
+  packageJSON,
+  JSON.stringify(newPkg, null, 2) + '\n')
+
+/**
+ * Given this file is executed as a shell-script,
+ * this is the way we return the value.
+ */
+console.log(version)
