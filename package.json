@@ -8,11 +8,13 @@
   "scripts": {
     "build": "rollup -c",
     "test": "ava",
-    "deploy": "scripts/deploy"
+    "deploy": "scripts/deploy",
+    "gadd": "git add -u; echo >/dev/null"
   },
   "pre-commit": [
     "test",
-    "build"
+    "build",
+    "gadd"
   ],
   "repository": {
     "type": "git",
