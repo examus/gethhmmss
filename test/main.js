@@ -1,6 +1,12 @@
 import test from 'ava'
 
 import gethhmmss from '../src/main'
+import toMMSS from '../src/toMMSS'
+import toHHMMSS from '../src/toHHMMSS'
+
+test('toHHMMSS is just an alias for gethhmmss', t => {
+  t.is(gethhmmss, toHHMMSS)
+})
 
 test('Only number and Date is allowed', t => {
   /* Number of arguments. */
@@ -46,4 +52,12 @@ test('Get hh:mm:ss of now', t => {
   let now = new Date()
 
   t.is(gethhmmss(), gethhmmss(now))
+})
+
+test('Get mm:ss from seconds', t => {
+  t.is(toMMSS(0), '00:00')
+  t.is(toMMSS(59), '00:59')
+  t.is(toMMSS(60), '01:00')
+  t.is(toMMSS(3600), '60:00')
+  t.is(toMMSS(3601), '60:01')
 })
