@@ -31,8 +31,7 @@
   "ava": {
     "require": [
       "babel-register"
-    ],
-    "babel": "inherit"
+    ]
   },
   "license": "MIT",
   "bugs": {
@@ -40,10 +39,10 @@
   },
   "homepage": "https://github.com/examus/gethhmmss#readme",
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^2.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.57.1"
+    "rollup": "^1.17.0"
   }
 }
