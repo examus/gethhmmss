@@ -6,17 +6,17 @@
   "module": "dist/gethhmmss.esm.js",
   "browser": "dist/gethhmmss.umd.js",
   "scripts": {
-    "i": "npm install",
+    "npm-install": "npm install",
     "build": "rollup -c",
     "test": "ava",
     "deploy": "scripts/deploy",
-    "gadd": "git add -u; echo >/dev/null"
+    "git-add": "git add -u; echo >/dev/null"
   },
   "pre-commit": [
-    "i",
+    "npm-install",
     "test",
     "build",
-    "gadd"
+    "git-add"
   ],
   "repository": {
     "type": "git",
