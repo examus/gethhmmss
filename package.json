@@ -1,6 +1,6 @@
 {
   "name": "gethhmmss",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Convert seconds or Data object to \"hh:mm:ss\" format.",
   "main": "dist/gethhmmss.cjs.js",
   "module": "dist/gethhmmss.esm.js",
