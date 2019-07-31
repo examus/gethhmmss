@@ -8,9 +8,9 @@ let pkg =
     readFileSync(packageJSON, {encoding: 'utf8'}))
 
 let [major] = pkg.version.split('.')
-let version = [++major, 0, 0].join('.')
+let v = [++major, 0, 0].join('.')
 
-let newPkg = Object.assign({}, pkg, {version})
+let newPkg = Object.assign({}, pkg, {version: v})
 
 writeFileSync(
   packageJSON,
@@ -20,4 +20,4 @@ writeFileSync(
  * Given this file is executed as a shell-script,
  * this is the way we return the value.
  */
-console.log(version)
+console.log(v)
