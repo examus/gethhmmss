@@ -8,18 +8,18 @@ cd (git rev-parse --show-toplevel)
 #
 # Update version in package.json.
 #
-set version (scripts/updateVersion)
+set v (scripts/updateVersion)
 
 #
 # And commit.
 #
 git add package.json
-git commit -m "'Update version: $version.'"
+git commit -m "'Update version: $v'"
 
 #
 # Push the commits and the tag.
 #
-git tag $version
+git tag $v
 git push origin tag
 git push origin HEAD
 
