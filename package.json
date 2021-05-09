@@ -41,10 +41,10 @@
   },
   "homepage": "https://github.com/examus/gethhmmss#readme",
   "devDependencies": {
-    "ava": "^2.2.0",
-    "babel-preset-env": "^1.6.1",
+    "ava": "^3.15.0",
+    "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^1.17.0"
+    "rollup": "^1.32.1"
   }
 }
